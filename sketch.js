@@ -42,6 +42,7 @@ function setup() {
   trex.scale = 0.5;
   trex.velocityX = 8;
 
+  invisibleGround = createSprite(ground.width/2,windowHeight-30,ground.width,10); 
   
   ground = createSprite(300,windowHeight-40,600,20);
   ground.addImage("ground",groundImage);
@@ -84,7 +85,7 @@ function draw() {
     camera.position.x = trex.x;
     //if (camera.position.x + width/2 > ground.x+ ground.width/2){
       if (camera.position.x > ground.x){
-      invisibleground.x = camera.position.x;
+      invisibleGround.x = camera.position.x;
       ground.x = camera.position.x;
     }
     if(keyDown("space") && trex.y >= windowHeight-80) {
